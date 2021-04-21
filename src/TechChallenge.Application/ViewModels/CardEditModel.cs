@@ -22,7 +22,7 @@ namespace TechChallenge.Application.ViewModels
 
                 return true;
             }
-            catch(AssertValidationException ex)
+            catch(AssertValidationException)
             {
                 return false;
             }
