@@ -77,8 +77,8 @@ namespace TechChallenge.Application.Services
             var secondHalf = seed.GetRange(splitPoint, seed.Count - splitPoint);
 
             var finalList = new List<int>();
-            finalList.AddRange(firstHalf);
             finalList.AddRange(secondHalf);
+            finalList.AddRange(firstHalf);
 
             return ListToLong(finalList);
         }
