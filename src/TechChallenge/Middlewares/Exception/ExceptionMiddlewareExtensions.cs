@@ -8,7 +8,7 @@ using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
 
-namespace TechChallenge.Middlewares
+namespace TechChallenge.Middlewares.Exception
 {
     public static class ExceptionMiddlewareExtensions
     {
@@ -25,7 +25,7 @@ namespace TechChallenge.Middlewares
                     if (contextFeature != null)
                     {
                         logger.LogError($"Exception: {contextFeature.Error}");
-                        await context.Response.WriteAsync(new 
+                        await context.Response.WriteAsync(new ExceptionDetail
                         {
                             StatusCode = context.Response.StatusCode,
                             Message = "Internal Server Error."
