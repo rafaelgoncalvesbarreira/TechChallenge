@@ -15,25 +15,16 @@ namespace TechChallenge.Application.ViewModels
 
         public bool isValid()
         {
-            try
-            {
-                Assert(CVV_SIZE, (int)Math.Ceiling(Math.Log10(CVV)));
-                Assert(CARDNUMBER_SIZE, (int)Math.Ceiling(Math.Log10(CardNumber)));
-
-                return true;
-            }
-            catch(AssertValidationException)
+            if(CardNumber <= 0 || (int)Math.Ceiling(Math.Log10(CardNumber)) > CARDNUMBER_SIZE)
             {
                 return false;
             }
-        }
-
-        private void Assert(int max, int actual)
-        {
-            if(actual > max)
+            if(CVV <=0 || (int)Math.Ceiling(Math.Log10(CVV)) > CVV_SIZE)
             {
-                throw new AssertValidationException("Expected != actual");
+                return false;
             }
+
+            return true;
         }
     }
 }
