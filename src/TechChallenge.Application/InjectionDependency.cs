@@ -2,9 +2,9 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
-using TechChallenge.Application.Contract;
+using TechChallenge.Application.Contracts;
 using TechChallenge.Application.Services;
-using TechChallenge.Data.Contract;
+using TechChallenge.Data.Contracts;
 using TechChallenge.Infra;
 using TechChallenge.Infra.Repositories;
 

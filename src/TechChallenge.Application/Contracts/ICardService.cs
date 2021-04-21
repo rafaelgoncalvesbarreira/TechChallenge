@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
-using TechChallenge.Application.ViewModel;
+using TechChallenge.Application.ViewModels;
 
-namespace TechChallenge.Application.Contract
+namespace TechChallenge.Application.Contracts
 {
     public interface ICardService
     {

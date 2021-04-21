@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace TechChallenge.Application.ViewModel
+namespace TechChallenge.Application.ViewModels
 {
     public class TokenValidationViewModel
     {

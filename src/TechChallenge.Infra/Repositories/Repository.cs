@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TechChallenge.Data.Contract;
+using TechChallenge.Data.Contracts;
 using TechChallenge.Infra.Contexts;
 
 namespace TechChallenge.Infra.Repositories

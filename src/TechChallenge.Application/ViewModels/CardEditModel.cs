@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using TechChallenge.Application.Validation;
 
-namespace TechChallenge.Application.ViewModel
+namespace TechChallenge.Application.ViewModels
 {
     public class CardEditModel: IValidable
     {

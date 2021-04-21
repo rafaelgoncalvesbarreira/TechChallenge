@@ -5,8 +5,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
-using TechChallenge.Application.Contract;
-using TechChallenge.Application.ViewModel;
+using TechChallenge.Application.Contracts;
+using TechChallenge.Application.ViewModels;
 
 namespace TechChallenge.Controllers
 {

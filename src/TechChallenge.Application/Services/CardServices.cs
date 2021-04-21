@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
-using TechChallenge.Application.Contract;
-using TechChallenge.Application.ViewModel;
-using TechChallenge.Data.Contract;
+using TechChallenge.Application.Contracts;
+using TechChallenge.Application.ViewModels;
+using TechChallenge.Data.Contracts;
 using TechChallenge.Domain.Entities;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;

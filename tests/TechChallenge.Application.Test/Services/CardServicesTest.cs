@@ -1,15 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using TechChallenge.Application.Contract;
+using TechChallenge.Application.Contracts;
 using TechChallenge.Application.Services;
 using Xunit;
 using Moq;
-using TechChallenge.Data.Contract;
+using TechChallenge.Data.Contracts;
 using TechChallenge.Domain.Entities;
 using System.Linq;
 using Microsoft.Extensions.Logging;
-using TechChallenge.Application.ViewModel;
+using TechChallenge.Application.ViewModels;
 using MockQueryable.Moq;
 
 namespace TechChallenge.Application.Test.Services
