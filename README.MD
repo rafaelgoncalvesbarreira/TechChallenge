@@ -10,6 +10,8 @@ If using dotnet CLI, use:
 
 ```bash
 dotnet restore
+dotnet build
+dotnet run
 ```
 
 #### List of dependencies:
