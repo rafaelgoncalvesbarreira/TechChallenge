@@ -21,7 +21,7 @@ namespace TechChallenge.Controllers
         }
 
         [HttpPost]
-        [ProducesResponseType(typeof(CardViewModel), (int)HttpStatusCode.OK)]
+        [ProducesResponseType(typeof(TokenValidationViewModel), (int)HttpStatusCode.OK)]
         public async Task<TokenValidationViewModel> Post(TokenValidationEditModel model)
         {
             return await service.ValidateToken(model);
