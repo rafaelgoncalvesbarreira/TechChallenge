@@ -47,10 +47,8 @@ namespace TechChallenge
         {
             if (env.IsDevelopment())
             {
-                //app.UseDeveloperExceptionPage();
+                app.UseDeveloperExceptionPage();
 
-                app.UseSwagger();
-                app.UseSwaggerUI(setup => setup.SwaggerEndpoint("/swagger/v1/swagger.json", "TechChalleng v1"));
             }
             else
             {
@@ -59,6 +57,8 @@ namespace TechChallenge
                 app.UseHsts();
             }
 
+            app.UseSwagger();
+            app.UseSwaggerUI(setup => setup.SwaggerEndpoint("/swagger/v1/swagger.json", "TechChalleng v1"));
 
             app.UseHttpsRedirection();
 
@@ -69,6 +69,7 @@ namespace TechChallenge
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
+                endpoints.MapDefaultControllerRoute();
             });
         }
     }
