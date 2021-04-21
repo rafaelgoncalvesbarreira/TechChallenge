@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Threading.Tasks;
 using TechChallenge.Application.Contract;
 using TechChallenge.Application.ViewModel;
@@ -20,10 +21,10 @@ namespace TechChallenge.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Post(TokenValidationModel model)
+        [ProducesResponseType(typeof(CardViewModel), (int)HttpStatusCode.OK)]
+        public async Task<TokenValidationViewModel> Post(TokenValidationEditModel model)
         {
-            var isValid = await service.ValidateToken(model);
-            return Ok(isValid);
+            return await service.ValidateToken(model);
         }
     }
 }

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace TechChallenge.Application.ViewModel
 {
-    public class TokenValidationModel
+    public class TokenValidationEditModel
     {
         public int CustomerId { get; set; }
         public int CardId { get; set; }

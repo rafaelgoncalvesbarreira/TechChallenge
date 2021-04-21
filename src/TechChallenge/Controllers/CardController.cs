@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Threading.Tasks;
 using TechChallenge.Application.Contract;
 using TechChallenge.Application.ViewModel;
@@ -20,6 +21,8 @@ namespace TechChallenge.Controllers
         }
 
         [HttpPost]
+        [ProducesResponseType(typeof(CardViewModel), (int)HttpStatusCode.OK)]
+        [ProducesResponseType((int)HttpStatusCode.BadRequest)]
         public async Task<IActionResult> Create([FromBody] CardEditModel model)
         {
             if (model.isValid())

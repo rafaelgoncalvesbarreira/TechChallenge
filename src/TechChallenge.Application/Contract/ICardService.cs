@@ -9,6 +9,6 @@ namespace TechChallenge.Application.Contract
     public interface ICardService
     {
         Task<CardViewModel> CreateAsync(CardEditModel model);
-        Task<bool> ValidateToken(TokenValidationModel model);
+        Task<TokenValidationViewModel> ValidateToken(TokenValidationEditModel model);
     }
 }

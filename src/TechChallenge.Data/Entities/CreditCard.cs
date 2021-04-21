@@ -9,7 +9,6 @@ namespace TechChallenge.Domain.Entities
         public Customer Customer{ get; set; }
         public long Number { get; set; }
         public int CVV { get; set; }
-        public DateTime RegristrationDate { get; set; }
-        public long Token { get; set; }
+        public DateTime TokenRegristrationDate { get; set; }
     }
 }

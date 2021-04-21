@@ -28,39 +28,42 @@ namespace TechChallenge.Application.Services
                 Customer = new Customer { Id = model.CustomerId },
                 Number = model.CardNumber,
                 CVV = model.CVV,
-                RegristrationDate = DateTime.Now
+                TokenRegristrationDate = DateTime.Now
             };
-            creditCard.Token = generateToken(model.CardNumber, model.CVV);
+            var token = generateToken(model.CardNumber, model.CVV);
 
             creditCard = await repository.InsertAsync(creditCard);
 
             return new CardViewModel
             {
                 CardId = creditCard.Id,
-                RegistrationDate = creditCard.RegristrationDate,
-                Token = creditCard.Token
+                RegistrationDate = creditCard.TokenRegristrationDate,
+                Token = token
             };
         }
 
-        public async Task<bool> ValidateToken(TokenValidationModel model)
+        public async Task<TokenValidationViewModel> ValidateToken(TokenValidationEditModel model)
         {
+            var tokenValidation = new TokenValidationViewModel();
+
             var entity = await repository
                 .GetAll()
                 .FirstOrDefaultAsync(o =>
                     o.Customer.Id == model.CustomerId
-                    && o.Id == model.CardId
-                    && o.Token == model.Token);
+                    && o.Id == model.CardId);
 
             if (entity == null)
             {
-                return false;
+                return tokenValidation;
             }
 
+            var token = generateToken(entity.Number, entity.CVV);
+            
+            tokenValidation.Validated = (entity.TokenRegristrationDate.AddMinutes(30) >= DateTime.Now)
+                && (token == model.Token);
+            _logger.LogInformation($"Card Number: {entity.Number} Valid: {tokenValidation.Validated}");
 
-            var isValid = entity.RegristrationDate.AddMinutes(30) >= DateTime.Now;
-            _logger.LogInformation($"Card Number: {entity.Number.ToString()}. Valid: {isValid}");
-
-            return isValid;
+            return tokenValidation;
         }
 
         private long generateToken(long cardNumber, int cvv)
