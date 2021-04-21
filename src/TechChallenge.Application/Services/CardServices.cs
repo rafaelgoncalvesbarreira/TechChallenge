@@ -30,7 +30,7 @@ namespace TechChallenge.Application.Services
                 CVV = model.CVV,
                 TokenRegristrationDate = DateTime.Now
             };
-            var token = generateToken(model.CardNumber, model.CVV);
+            var token = GenerateToken(model.CardNumber, model.CVV);
 
             creditCard = await repository.InsertAsync(creditCard);
 
@@ -57,7 +57,7 @@ namespace TechChallenge.Application.Services
                 return tokenValidation;
             }
 
-            var token = generateToken(entity.Number, entity.CVV);
+            var token = GenerateToken(entity.Number, entity.CVV);
             
             tokenValidation.Validated = (entity.TokenRegristrationDate.AddMinutes(30) >= DateTime.Now)
                 && (token == model.Token);
@@ -66,7 +66,7 @@ namespace TechChallenge.Application.Services
             return tokenValidation;
         }
 
-        private long generateToken(long cardNumber, int cvv)
+        public long GenerateToken(long cardNumber, int cvv)
         {
             var seed = GetLast4digits(cardNumber);
 
