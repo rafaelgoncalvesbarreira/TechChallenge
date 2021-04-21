@@ -55,7 +55,7 @@ But the problem uses a valor for *k* up to 5 digits and an array with 4 number, 
 2. Divide the array in two halves
 3. Put the last half at the begin
 
-*p.s:* This reminder me later of [fast inverse square root](https://en.wikipedia.org/wiki/Fast_inverse_square_root), and I now it's not the same.
+*p.s:* This reminder me later of [fast inverse square root](https://en.wikipedia.org/wiki/Fast_inverse_square_root), and I know it's not the same.
 
 ### Validate Token
 
