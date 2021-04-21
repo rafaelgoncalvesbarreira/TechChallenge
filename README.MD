@@ -24,7 +24,7 @@ dotnet restore
 
 The project uses only WebApi, without view, but its comes with Swashbuckler/Swagger (For now its only show when in Development ambient) to display all API and provide means to test them. See below a screen shoot.
 
-![All API](https://github.com/rafaelgoncalvesbarreira/TechChallenge/assets/swagger.png "All API")
+![All API](assets/swagger.png "All API")
 
 ## APIs
 
