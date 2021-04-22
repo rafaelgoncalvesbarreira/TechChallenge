@@ -14,6 +14,13 @@ dotnet build
 dotnet run
 ```
 
+Or you can run with docker, in solution path use:
+
+```bash
+docker build -t tech_challenge .
+docker run -d -p 8080:80 -p 8081:443 --name tech_challenge techchallenge
+```
+
 #### List of dependencies:
 
 - [Entity framework core](https://www.nuget.org/packages/Microsoft.EntityFrameworkCore/)
