@@ -21,6 +21,8 @@ docker build -t tech_challenge .
 docker run -d -p 8080:80 -p 8081:443 --name techchallenge tech_challenge
 ```
 
+There is only 3 customer saved, with ids 1, 2 and 3.
+
 #### List of dependencies:
 
 - [Entity framework core](https://www.nuget.org/packages/Microsoft.EntityFrameworkCore/)
